@@ -2,7 +2,7 @@ const WIDTH = 20
 const HEIGHT = 12
 
 class Game {
-  constructor({width=WIDTH,height=HEIGHT,highscore=0,callback=()=>console.log('game over!')}={}){
+  constructor({width=WIDTH,height=HEIGHT,highscore=0,callback=()=>{}}={}){
     this.paused=false
 
     this.width=width
