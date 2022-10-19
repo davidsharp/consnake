@@ -1,13 +1,13 @@
-const pixelSize = 16
 const WIDTH = 20
 const HEIGHT = 12
 
 class Game {
-  constructor({width=WIDTH,height=HEIGHT,callback=()=>console.log('game over!')}={}){
+  constructor({width=WIDTH,height=HEIGHT,highscore=0,callback=()=>console.log('game over!')}={}){
     this.paused=false
 
     this.width=width
     this.height=height
+    this.highscore=highscore // could store in localStorage?
     this.gameOver=()=>{
       callback()
       this.init()
@@ -35,6 +35,7 @@ class Game {
       head[1]===this.apple[1]
     ) {
       this.points++
+      if(this.points>this.highscore)this.highscore = this.points
       this.moveApple()
     }
     else this.snake.bits.pop()
@@ -105,15 +106,15 @@ class Game {
     for(let y=0;y<this.height;y++){
       for(let x=0;x<this.width;x++){ 
           str+=(
-            this.snake.bits.find(bit=>bit[0]==x&&bit[1]==y) ? 's' :
-            this.apple[0]==x&&this.apple[1]==y ? 'a' :
-            '#'
+            this.snake.bits.find(bit=>bit[0]==x&&bit[1]==y) ? '#' :
+            this.apple[0]==x&&this.apple[1]==y ? '*' :
+            '.'
           )
       }
       str+='\n'
     }
-    console.log(str)
-    console.log(`points: ${this.points}`)
+    console.log(`%c${str}`,"background-color: green; color: red; font-weight: bold; padding: 4px; line-height: 0.6;")
+    console.log(`points: ${this.points}\thighscore: ${this.highscore}`)
   }
   pause(){this.paused=true}
   unpause(){this.paused=false}
