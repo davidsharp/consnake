@@ -6,7 +6,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "serve": "npx http-server . -p 7777 & open \"http://localhost:7777\""
+    "serve": "npx http-server . -p 7777 & open \"http://localhost:7777\"",
+    "kill": "kill $(lsof -t -i:7777)"
   },
   "dependencies": {
     "devtools-detect": "^4.0.0"

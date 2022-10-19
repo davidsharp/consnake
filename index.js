@@ -9,9 +9,9 @@ const start = () => {
   const game = new Game()
   console.log(game)
   game.init()
-  game.draw()
-  game.tick()
-  game.draw()
+  setInterval(() => {
+    game.tick()
+  }, 1000);
 }
 
 const init = () => {

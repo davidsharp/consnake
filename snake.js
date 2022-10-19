@@ -22,14 +22,10 @@ class Game {
     this.wag=false
   }
   tick(){
-    // hacky throttle and pause
-    // not just hacky, wrong? fix me!
-    if(this.frame%10!=0 || this.paused){
+    this.draw()
+    if(this.paused){
       this.frame++
       return;
-    }
-    if(this.frame%8==0){
-      this.wag=!this.wag
     }
     const oldState=[...this.snake.bits]
     const head=this.moveCalc(oldState[0],this.snake.direction)
@@ -117,10 +113,7 @@ class Game {
       str+='\n'
     }
     console.log(str)
-
     console.log(`points: ${this.points}`)
-
-    this.tick()
   }
   pause(){this.paused=true}
   unpause(){this.paused=false}
