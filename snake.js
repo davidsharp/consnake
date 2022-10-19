@@ -15,7 +15,7 @@ class Game {
     this.init()
   }
   init(){
-    this.snake={bits:[[30,20],[29,20],[28,20]],direction:'r'}
+    this.snake={bits:[[11,6],[10,6],[9,6]],direction:'r'}
     this.moveApple()
     this.points=0
     this.frame=0

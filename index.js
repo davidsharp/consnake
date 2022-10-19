@@ -9,9 +9,10 @@ const start = () => {
   const game = new Game()
   console.log(game)
   game.init()
+  document.addEventListener('keydown', e => game.listen(e.key))
   setInterval(() => {
     game.tick()
-  }, 1000);
+  }, 300);
 }
 
 const init = () => {
