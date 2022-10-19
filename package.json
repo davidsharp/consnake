@@ -5,6 +5,9 @@
   "author": "David Sharp <hello@davidsharp.codes>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "serve": "npx http-server . -p 7777 & open \"http://localhost:7777\""
+  },
   "dependencies": {
     "devtools-detect": "^4.0.0"
   }
