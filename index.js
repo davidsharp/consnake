@@ -14,4 +14,5 @@ const init = () => {
   })
 }
 
+// could optionally provide start instead
 export default init
