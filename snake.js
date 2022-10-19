@@ -103,31 +103,22 @@ class Game {
     }
   }
   draw(){
-    /*/draw snake
-    this.snake.bits.forEach((bit,i)=>{
-      this.drawDogPart(bit,{
-        next:this.snake.bits[i+1],
-        prev:this.snake.bits[i-1],
-      })
-    })*/
+    console.clear()
 
     let str = ''
     for(let y=0;y<this.height;y++){
-      for(let x=0;x<this.width;x++){
-          str+='#'
+      for(let x=0;x<this.width;x++){ 
+          str+=(
+            this.snake.bits.find(bit=>bit[0]==x&&bit[1]==y) ? 's' :
+            this.apple[0]==x&&this.apple[1]==y ? 'a' :
+            '#'
+          )
       }
       str+='\n'
     }
     console.log(str)
 
     console.log(`points: ${this.points}`)
-
-
-    /*/draw apple
-    this.ctx.fillStyle=this.palette[1]
-    //this.ctx.fillRect(this.apple[0]*pixelSize,this.apple[1]*pixelSize,pixelSize-1,pixelSize-1)
-    getSprite(this.ctx,7,this.apple[0]*pixelSize,this.apple[1]*pixelSize)
-    */
 
     this.tick()
   }
