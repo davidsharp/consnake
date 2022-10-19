@@ -19,7 +19,6 @@ class Game {
     this.moveApple()
     this.points=0
     this.frame=0
-    this.wag=false
   }
   tick(){
     this.draw()
@@ -102,6 +101,7 @@ class Game {
   draw(){
     console.clear()
 
+    // TODO ~ rewrite to join array, rather than nested loops
     let str = ''
     for(let y=0;y<this.height;y++){
       for(let x=0;x<this.width;x++){ 
