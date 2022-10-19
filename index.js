@@ -1,10 +1,17 @@
 import devtools from './node_modules/devtools-detect/index.js';
+import Game from './snake.js'
 
 let inited = false
 
 const start = () => {
   inited = true
   console.log('inited!')
+  const game = new Game()
+  console.log(game)
+  game.init()
+  game.draw()
+  game.tick()
+  game.draw()
 }
 
 const init = () => {
