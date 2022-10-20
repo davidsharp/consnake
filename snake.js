@@ -107,9 +107,9 @@ class Game {
       let inner = Array(this.width)
       for(let x=0;x<this.width;x++){
           inner[x] = (
-            this.snake.bits.find(bit=>bit[0]==x&&bit[1]==y) ? '#' :
-            this.apple[0]==x&&this.apple[1]==y ? '*' :
-            '.'
+            this.snake.bits.find(bit=>bit[0]==x&&bit[1]==y) ? '🟥' :
+            this.apple[0]==x&&this.apple[1]==y ? '🍎' :
+            ' '
           )
       }
       arr[y] = (inner.join(''))
