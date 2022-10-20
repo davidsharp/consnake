@@ -1,4 +1,4 @@
-import devtools from './node_modules/devtools-detect/index.js';
+import devtools from 'devtools-detect';
 import Game from './snake.js'
 
 let inited = false
