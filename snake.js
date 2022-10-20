@@ -101,19 +101,20 @@ class Game {
   draw(){
     console.clear()
 
-    // TODO ~ rewrite to join array, rather than nested loops
-    let str = ''
+    // TODO ~ rewrite to store _board_ as array
+    let arr = Array(this.height)
     for(let y=0;y<this.height;y++){
-      for(let x=0;x<this.width;x++){ 
-          str+=(
+      let inner = Array(this.width)
+      for(let x=0;x<this.width;x++){
+          inner[x] = (
             this.snake.bits.find(bit=>bit[0]==x&&bit[1]==y) ? '#' :
             this.apple[0]==x&&this.apple[1]==y ? '*' :
             '.'
           )
       }
-      str+='\n'
+      arr[y] = (inner.join(''))
     }
-    console.log(`%c${str}`,"background-color: green; color: red; font-weight: bold; padding: 4px; line-height: 0.6;")
+    console.log(`%c${arr.join('\n')}`,"background-color: green; color: red; font-weight: bold; padding: 4px; line-height: 0.6;")
     console.log(`points: ${this.points}\thighscore: ${this.highscore}`)
   }
   pause(){this.paused=true}
