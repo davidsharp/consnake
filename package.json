@@ -1,6 +1,6 @@
 {
   "name": "consnake",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "David Sharp <hello@davidsharp.codes>",
   "license": "MIT",
