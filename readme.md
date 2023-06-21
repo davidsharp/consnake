@@ -16,5 +16,8 @@ This game listens for arrow key events once the game is running. The game only r
 _Further thoughts:_
 - random colours between games
 - more games?
+- better handle focus
+- more options (size, colour, frame rate, etc)
+- add start and game over states
 
 _Happy snaking!_

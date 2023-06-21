@@ -109,7 +109,7 @@ class Game {
           inner[x] = (
             this.snake.bits.find(bit=>bit[0]==x&&bit[1]==y) ? '🟥' :
             this.apple[0]==x&&this.apple[1]==y ? '🍎' :
-            ' '
+            '🟩'
           )
       }
       arr[y] = (inner.join(''))
